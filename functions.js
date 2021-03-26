@@ -168,3 +168,63 @@ const binary = (arr, target) => {
   }
 };
 console.log(binary(sortedArr, 43));
+
+// Leetcode #9
+const isPalindrome = (x) => {
+  const inputArray = x.toString().split('');
+  let reverse = ``;
+
+  for (let i = inputArray.length - 1; i >= 0; i--) {
+    reverse += `${inputArray[i]}`;
+  }
+  const outputNumber = parseInt(reverse, 10);
+
+  if (x === outputNumber) {
+    return true;
+  }
+  return false;
+};
+console.log('isPalindrome:', isPalindrome(121));
+
+// Leetcode #34
+
+const searchRange = (nums, target) => {
+  const unfilteredOutputArray = [];
+  const filteredOutputArray = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === target) {
+      unfilteredOutputArray.push(i);
+    }
+  }
+  if (unfilteredOutputArray.length === 0) {
+    return [-1, -1];
+  }
+  filteredOutputArray.push(unfilteredOutputArray[0]);
+  filteredOutputArray.push(
+    unfilteredOutputArray[unfilteredOutputArray.length - 1]
+  );
+  return filteredOutputArray;
+};
+testNums = [5, 7, 7, 8, 8, 10];
+console.log('searchRange:', searchRange(testNums, 8));
+
+// Leetcode #412
+const fizzBuzz = (n) => {
+  let outputArray = [];
+  for (let i = 1; i <= n; i++) {
+    let output = `${i}`;
+    if (i % 3 === 0 && i % 5 !== 0) {
+      output = `Fizz`;
+    }
+    if (i % 5 === 0 && i % 3 !== 0) {
+      output = `Buzz`;
+    }
+    if (i % 5 === 0 && i % 3 === 0) {
+      output = `FizzBuzz`;
+    }
+    outputArray.push(output);
+  }
+  return outputArray;
+};
+console.log('fizzBuzz:', fizzBuzz(15));
