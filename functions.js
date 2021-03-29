@@ -187,7 +187,6 @@ const isPalindrome = (x) => {
 console.log('isPalindrome:', isPalindrome(121));
 
 // Leetcode #34
-
 const searchRange = (nums, target) => {
   const unfilteredOutputArray = [];
   const filteredOutputArray = [];
