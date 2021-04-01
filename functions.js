@@ -184,6 +184,7 @@ const isPalindrome = (x) => {
   }
   return false;
 };
+
 console.log('isPalindrome:', isPalindrome(121));
 
 // Leetcode #34
