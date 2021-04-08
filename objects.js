@@ -162,14 +162,57 @@
 //   `${testCase1.studentName}'s grade average is: ${gradeAvg(testCase1)}%`
 // );
 
-function Student(name, id, year, grade) {
-  this.fullName = name;
-  this.id = id;
-  this.gradeYear = year;
-  this.grade = grade;
-  this.admin = false;
+// Constructor functions
+// function Student(name, id, year, grade) {
+//   this.fullName = name;
+//   this.id = id;
+//   this.gradeYear = year;
+//   this.grade = grade;
+//   this.admin = false;
+//   this.graduate = () => {
+//     return (this.gradeYear += 1);
+//   };
+//   this.whiteList = () => {
+//     return (this.admin = true);
+//   };
+//   this.setGrade = (newGrade) => {
+//     return (this.grade = newGrade);
+//   };
+// }
+
+// let zac = new Student('Zac Ingoglia', 25879, 12, 95.61);
+
+// console.log('Pre-Data', zac);
+// zac.graduate();
+// zac.whiteList();
+// zac.setGrade(85.24);
+// console.log('Post-Data', zac);
+
+// Getter Classes
+// class Rectangle {
+//   constructor(width, length) {
+//     this.width = width;
+//     this.length = length;
+//   }
+//   get area() {
+//     return this.length * this.width;
+//   }
+// }
+// const rect1 = new Rectangle(10, 5);
+// const rect2 = new Rectangle(6, 12);
+// const rect3 = new Rectangle(15, 20);
+
+// const rectArea = [rect1.area, rect2.area, rect3.area];
+// console.log(rectArea);
+
+// Setter Classes
+class Circle {
+  set radius(radius) {
+    this._radius = radius;
+    this.area = 3.14 * Math.pow(radius, 2);
+    this.circumference = 2 * 3.14 * radius;
+  }
 }
-
-let zac = new Student('Zac Ingoglia', 25879, 12, 95.6);
-
-console.log(zac);
+const circle1 = new Circle();
+circle1.radius = 15;
+console.log(circle1);
