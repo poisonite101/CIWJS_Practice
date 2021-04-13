@@ -54,22 +54,61 @@
       </li>
     </ul>
 
-    <form action="" onsubmit="run()">
+    <form action="">
       <p>Please enter your info</p>
-      <label for="name">Full Name</label>
-      <input type="text" name="name" id="name" />
+      <label for="stuName">Full Name</label>
+      <input type="text" id="stuName" />
 
       <label for="height">Height</label>
-      <input type="text" name="height" id="height" />
+      <input type="text" id="height" />
 
       <label for="id">ID</label>
-      <input type="text" name="id" id="id" />
+      <input type="text" id="id" />
 
       <label for="favColor">Favorite Color</label>
-      <input type="text" name="favColor" id="favColor" />
-
-      <button type="submit">Done</button>
+      <input type="text" id="favColor" />
     </form>
+    <button id="btn">Done</button>
+    <br />
+    <br />
+    <br />
+    <script>
+      // Stores each student
+      let students = [];
+
+      // Will run when button is clucked
+      const run = (event) => {
+        // Prevents default page refresh and submit on button press
+        event.preventDefault();
+
+        // Object to store completed student info
+        let student = {
+          // Data from form
+          stuName: document.getElementById('stuName').value,
+          height: document.getElementById('height').value,
+          id: document.getElementById('id').value,
+          favColor: document.getElementById('favColor').value,
+
+          // Additional Data
+          firstLogin: Date.now(),
+        };
+
+        // Submits the collected data to the main student array
+        students.push(student);
+        // Resets the visable form after data has been recorded
+        document.forms[0].reset();
+
+        // Log a list of all the submitted students
+        console.log(students);
+
+        // Convert the array of students to a string and store it in the machine's local web storage
+        localStorage.setItem('studentList', JSON.stringify(students));
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('btn').addEventListener('click', run);
+      });
+    </script>
 
     <script src="./objects.js"></script>
     <!-- <script src="./calc.js"></script> -->

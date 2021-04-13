@@ -1,0 +1,22 @@
+body {
+  height: 2000px;
+}
+
+#field {
+  background-color: rgb(81, 255, 0);
+  width: 200px;
+  height: 150px;
+  position: relative;
+}
+
+#field:hover {
+  cursor: pointer;
+}
+
+#ball {
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* Motion illusion for ball */
+  transition: 1s all;
+}
